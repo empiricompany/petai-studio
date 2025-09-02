@@ -1,0 +1,16 @@
+services:
+  petai-studio:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+      - OPENROUTER_MODEL=${OPENROUTER_MODEL:-meta-llama/llama-4-scout}
+    restart: unless-stopped
+    # Per utilizzare un file .env per le variabili d'ambiente
+    env_file:
+      - .env
