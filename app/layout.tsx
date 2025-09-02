@@ -4,7 +4,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
     title: 'PetAI Studio',
-    description: 'Trasforma i tuoi pet in opere d\'arte con l\'intelligenza artificiale',
+    description: 'PetAI Studio is a web application that allows you to transform photos of your pets into works of art using artificial intelligence.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

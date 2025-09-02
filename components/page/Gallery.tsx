@@ -10,11 +10,9 @@ interface GalleryProps {
 }
 
 export function Gallery({ examples, onOpenGalleryPopup }: GalleryProps) {
-    // Funzione per derivare il percorso della miniatura dall'originale
     const getThumbnailSrc = (originalSrc: string) => {
         const parts = originalSrc.split('/');
         const filename = parts.pop();
-        // Sostituisce la cartella 'examples' con 'thumbnails'
         return `/thumbnails/${filename}`;
     };
 

@@ -1,43 +1,43 @@
-# File e cartelle da ignorare durante la build di Docker
+# Files and folders to ignore during the Docker build
 
-# Dipendenze
+# Dependencies
 node_modules
 npm-debug.log
 yarn-debug.log
 yarn-error.log
 
-# File di ambiente (verranno configurati in fase di deployment)
+# Environment files (will be configured during deployment)
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# File di build e cache
+# Build and cache files
 .next
 out
 build
 dist
 .cache
 
-# File di sistema
+# System files
 .DS_Store
 Thumbs.db
 
-# File di log
+# Log files
 *.log
 
-# File di editor
+# Editor files
 .idea
 .vscode
 *.swp
 *.swo
 
-# File di test
+# Test files
 coverage
 .nyc_output
 
-# Altri file non necessari
+# Other unnecessary files
 README.md
 LICENSE
 .git

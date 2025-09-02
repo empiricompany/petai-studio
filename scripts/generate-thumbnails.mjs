@@ -8,21 +8,21 @@ const thumbnailSize = 200;
 
 async function createThumbnails() {
   try {
-    // 1. Assicurati che la directory di output esista
+    // 1. Ensure the output directory exists
     await fs.mkdir(outputDir, { recursive: true });
     console.log(`Output directory '${outputDir}' ready.`);
 
-    // 2. Leggi i file dalla directory di origine
+    // 2. Read files from the source directory
     const files = await fs.readdir(sourceDir);
     console.log(`Found ${files.length} files in '${sourceDir}'.`);
 
-    // 3. Filtra solo i file immagine supportati
+    // 3. Filter only supported image files
     const imageFiles = files.filter(file =>
       /\.(jpe?g|png|webp|gif)$/i.test(file)
     );
     console.log(`Found ${imageFiles.length} image files to process.`);
 
-    // 4. Processa ogni immagine in parallelo
+    // 4. Process each image in parallel
     const processingPromises = imageFiles.map(async file => {
       const sourcePath = path.join(sourceDir, file);
       const outputPath = path.join(outputDir, file);
@@ -30,8 +30,8 @@ async function createThumbnails() {
       try {
         await sharp(sourcePath)
           .resize(thumbnailSize, thumbnailSize, {
-            fit: 'cover', // 'cover' taglia l'immagine per riempire le dimensioni, 'inside' la adatta
-            position: 'entropy' // Cerca la parte più interessante dell'immagine da mantenere
+            fit: 'cover', // 'cover' crops the image to fill the dimensions, 'inside' fits it within
+            position: 'entropy' // Attempts to find the most interesting part of the image to keep
           })
           .toFile(outputPath);
         console.log(`✅ Successfully created thumbnail for: ${file}`);
