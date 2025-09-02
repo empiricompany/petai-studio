@@ -1,5 +1,6 @@
 'use client';
 
+import { Github } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import { ModeToggle } from '@/components/theme-toggle';
 import { useImageGeneration } from '@/hooks/use-image-generation';
@@ -115,7 +116,20 @@ export default function Page() {
             <footer className="bg-card/80 backdrop-blur-sm border-t border-border py-6">
                 <div className="max-w-6xl mx-auto px-4 text-center text-sm text-muted-foreground">
                     <p>© 2025 PetAI Studio. All rights reserved.</p>
-                    <p className="mt-1">Powered by Next.js, Tailwind CSS e Gemini API.</p>
+                    <p className="mt-1">
+                        Powered by Next.js, Tailwind CSS, and Gemini API.
+                    </p>
+                    <div className="flex justify-center mt-2">
+                        <a
+                            href="https://github.com/empiricompany/petai-studio"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center gap-2 hover:text-primary transition-colors"
+                        >
+                            <Github size={16} />
+                            <span>View on GitHub</span>
+                        </a>
+                    </div>
                 </div>
             </footer>
 
