@@ -1,4 +1,5 @@
 # PetAI Studio
+<img width="1146" height="840" alt="demo" src="https://github.com/user-attachments/assets/75ed195e-40f0-4fce-9cab-c3e8bb9855ad" />
 
 PetAI Studio is a web application that allows you to transform photos of your pets into works of art using artificial intelligence.
 
